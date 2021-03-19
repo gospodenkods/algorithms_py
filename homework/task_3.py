@@ -15,14 +15,14 @@ def mediana(in_array, i):
 
     left_el = [el for el in in_array if el < trigger]
     right_el = [el for el in in_array if el > trigger]
-    pivots = [el for el in in_array if el == trigger]
+    sorts = [el for el in in_array if el == trigger]
 
     if i < len(left_el):
         return mediana(left_el, i)
-    elif i < len(left_el) + len(pivots):
-        return pivots[0]
+    elif i < len(left_el) + len(sorts):
+        return sorts[0]
     else:
-        return mediana(right_el, i - len(left_el) - len(pivots))
+        return mediana(right_el, i - len(left_el) - len(sorts))
 
 
 MIN_ITEM = 0
